@@ -1,0 +1,76 @@
+Understanding the OSI 7 layer model
+OSI stands for Open Systems Interconnection. It is a model used to standardise the functions of telecommunication and computing systems around the world. OSI 7 is conceptual, as the layers are abstractions that don’t define the actual technology used; however, the network topology and interoperability can be designed.
+
+But what does that actually mean? In Information Technology, standardisation is abstract so that providers, manufacturers, programmers and everyone involved has a model to work with that provides a uniform level of understanding. This enhances the interoperability of the different systems and processes, so they can work with each other.
+
+OSI layers
+Each layer in the OSI model serves the layer above it. There are seven layers in total in the OSI model. Here’s a quick rundown of each of them:
+
+The physical layer: Layer one is concerned with the transmission of data bits over physical mediums.
+
+Data link: Layer two specifies transmission of frames between connected nodes on the physical layer.
+
+Network: Addressing, routing and traffic control of a multi-node network is described by Layer three.
+
+Transport: Segmentation, acknowledgement and multiplexing between points on a network is defined at Layer four.
+
+Session: Layer five looks at the continuous exchange of data between two nodes
+
+Presentation: Encoding, data compression and encryption / decryption between a network service and application happens at Layer six.
+
+Application: Resource sharing, high level APIs and remote file access is defined by Layer seven.
+
+Layers 1, 2 and 3 are Media Layers while layers 4, 5, 6 and 7 are Host Layers.
+
+Layer 3 works on top of Layer 2
+Seems pretty simple right? In the OSI seven-layer model, Layer 3 works atop Layer 2, which works atop Layer 1. Bits are transferred over a variety of medium, cables, ports etc. Frames are used to define the data between two nodes on a data link, and when there’s more than two nodes, the network helps address route and control traffic. But, there’s a bit more to it than that.
+
+Layer 2 sublayers
+Layer 2 defines the protocol to both establish and terminate a physical connection between two devices. Under IEEE 802, Layer 2 can be divided into two sublayers. The MAC approves devices to access and transmit media, while the Logical Link Layer (LLC) first identifies protocols on the network layer and then checks for errors and frame synchronisation.
+
+Where Layer 3 works with IP addresses, Layer 2 works with MAC addresses. MAC addresses are unique identifiers for the network adaptor present in each device. As IP addresses are a layer of abstraction higher than MAC addresses, they are necessarily ‘slower’ (theoretically – to our human experience, it’s academic). IP addresses are also ‘leased’ or ‘assigned’ generally by a DHCP server. A MAC address is a fixed address to the network adaptor and can’t be changed on a device without changing the hardware adaptor.
+
+To make an analogy, a house address is always the same, like a MAC address, while an IP address can change, like the addressee at the house.
+
+Questions of efficiency between Layer 2 and Layer 3 networking
+Layer two networks forward all their traffic, including ARP and DHCP broadcasts, so data transmitted by one device on L2 will be forwarded to all devices on the network. This type of broadcast traffic is very fast, but as the network gains in size it creates congestion and leads to inefficiency over the network.
+
+Layer three traffic restricts broadcast traffic. Administrators on L3 can segment networks and restrict broadcast traffic to subnetworks, limiting the congestion of broadcast on large networks.
+
+We already know that L3 networks run on top of L2 networks, and are therefore one layer of abstraction higher than L2, but that doesn’t mean they are faster or better necessarily.
+
+Compared to the L2 broadcast, here’s the L3 process: For each datagram (package of data) send on L3, the IP portion is read by stripping the data link layer (L2) frame information and then reassembled again. From there, the hop count is decremented, the header checksum recalculated and a routing lookup executed. As you can see, it’s a little more involved than L2.
+
+Which is better, Layer 3 networking or Layer 2?
+It’s less a question of which is better, as both layers of the OSI have their role in the architecture of network performance. A Layer 2 network would be more useful broadcasting information between two computers in the same office, close together, where a broader network wouldn’t be affected by congestion.
+
+However, because L3 network switches work with routing of IP addresses, they are better for managing network traffic over multiple sites and through the internet. This highlights the fundamental difference between the two layers of abstraction and how they function as switches.
+
+How to choose between a Layer 2 switch or a Layer 3 switch for networking
+When it comes to building or upgrading your company’s IT infrastructure, you are likely to receive a lot of advice pushing you towards investing in routers or Layer 3 switches, which have the most bells and whistles. These options also bring additional (potentially significant) costs, but bigger doesn’t always mean better.
+
+As previously mentioned, deciding whether you need a Layer 3 switch or a Layer 2 switch is much more dependant on your specific requirements than a like-for-like comparison. It would be like asking whether a flat-head or a Phillips-head screwdriver is better – the answer is always dependent on the job at hand.
+
+Much like the difference between Layer 3 and Layer 2 in the OSI, the main difference between a Layer 2 switch and a Layer 3 switch is the routing function. A Layer 2 switch only works with MAC addresses and doesn’t interact with any higher layer addresses, such as an IP. A Layer 3 switch, on the other hand, can also do static routing and dynamic routing, which includes IP and virtual local area network (VLAN) communications. This dual-layer functionality is why a Layer 3 switch is also known as a multilayer switch.
+
+In practical terms, this means if your network runs on a Layer 2 domain then you would get no benefit from a Layer 3 switch. But, if you need inter-VLAN capabilities then you will need a Layer 3 switch.
+
+Layer 3 switch or router: What’s the difference?
+On the surface, routers and Layer 3 switches share a lot of the same attributes. Both options offer the same routing protocols by accessing incoming data packets and making dynamic routing decisions based on the relevant source and destination addresses.
+
+The main difference between them is in the hardware, as a Layer 3 switch offers all of the capabilities of a switch but only some of the facilities of a router. Although this may sound like a negative, the fact is that Layer 3 switches were built for improved performance in LANs by ditching some of the complexities routers are held to. As such, a Layer 3 switch can offer faster data transfers and can avoid network congestion within a LAN better than a router by skipping some steps in data verification. A Layer 3 switch also doesn’t have any wide area network (WAN) ports and so must stick to VLANs.  
+
+Similar to the decision between a Layer 2 or a Layer 3 switch, the question comes down to the application. If you are a large organisation with multiple offices, data centres and WANs you will require a router to allow those infrastructures to communicate. If that’s not the case and you’re solely using VLANs with intranet environments that have outgrown a Layer 2 switch then the Layer 3 switch was purpose-built to fit your needs.
+
+Less is more (sometimes)
+It’s important to remember that operating with lower-layer technology requires less hardware and fewer modalities of operation, which often means an overall lower cost.
+
+For example, a Layer 3 switch-based infrastructure needs routers to be installed on all sites, whereas a Layer 2 system can use Ethernet switches with router functionality as a subset.
+
+IT costs have been rising steadily for most businesses as they look to embrace digitisation. Now, we are at a tipping point where embracing each and every technological innovation may actually be hindering more than helping business growth. Today, the savvy business leader should focus on streamlining your infrastructure and avoid investing in redundant capabilities.
+
+In terms of a Layer 2 or Layer 3 comparison, a Layer 3 switch will cost more and configuring it, along with the VLANs, will require further build and maintenance costs than using Layer 2 switches. In turn, routers will cost more than Layer 3 switches for all the similar reasons.
+
+However, although you should seek to streamline your infrastructure where possible, some investments cannot be avoided. For example, although Layer 2 switches are effective within LANs, their lack of WAN capabilities means they cannot totally mitigate the need for a router to access the internet. Determining which is better is up to you and your requirements.
+
+Wideband provides enterprise internet and related  services to large Australian businesses, and is committed to providing the best possible quality to Australian enterprises. We’re 100% Australian owned and run, and we guarantee the quality of our service with our 6 month satisfaction guarantee.
